@@ -1,0 +1,32 @@
+= nario
+
+nario(SUPER NARIO GC) is horizontal scrolling game style demo tool for Ruby's GC.
+
+== require libs
+(1) ruby 1.9.2 or later
+(2) rubysdl-2.1.1
+
+== run
+
+ $ ruby nario.rb
+
+== options
+
+Please see:
+
+ $ ruby nario.rb -h
+
+== after
+
+You say "nario, It's revolutionary work!!", right?
+
+== Thanks
+* SDL
+  * author:slouken
+  * http://www.devolution.com/~slouken/
+* ruby/sdl
+  * author:ohai
+  * http://www.kmc.gr.jp/~ohai/index.html
+* rskit
+  * author:yhara
+  * http://mono.kmc.gr.jp/~yhara/
