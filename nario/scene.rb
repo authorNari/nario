@@ -1,13 +1,3 @@
-#example map define
-# map = Scene::Builder.new{
-#   mapping :title, Scene::Title.new {
-#     success :map_1
-#   }
-#   mapping :map_1, Scene::FlowWorld.new{
-#     success :map_2
-#   }
-# }.scene_map
-
 module Nario
   module Scene
     SCREEN_WIDTH = 760
@@ -207,8 +197,8 @@ module Nario
       end
     end
 
-    autoload :Builder, "scene/builder"
     autoload :Title, "scene/title"
     autoload :FlowWorld, "scene/flowworld"
+    autoload :EndCledit, "scene/endcledit"
   end
 end

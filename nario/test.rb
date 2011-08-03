@@ -175,6 +175,12 @@ module Nario
     goal_test[:map_1].render(screen)
   }
 
+  end_credit_test = {:endcledit => Scene::EndCledit.new{ success :endcledit }}
+  test_end_credit = lambda {|input, screen|
+    end_credit_test[:endcledit].act(input)
+    end_credit_test[:endcledit].render(screen)
+  }
+
   # image test
   #test_screen(
   #             reset_background,
@@ -202,7 +208,12 @@ module Nario
   # )
 
   # goal test
+  # test_screen(
+  #             test_goal
+  #             )
+
+  # endcredit test
   test_screen(
-              test_goal
+              test_end_credit
               )
 end

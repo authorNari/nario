@@ -24,8 +24,10 @@ module Nario
     world = {}
     world[:title] = Scene::Title.new { success :map1_1 }
     world[:title].build_scene &Map::TITLE
-    world[:map1_1] = Scene::FlowWorld.new { success :title; miss :title }
+    world[:map1_1] = Scene::FlowWorld.new { success :endcledit; miss :title }
     world[:map1_1].build_scene &Map::MAP1_1
+    world[:endcledit] = Scene::EndCledit.new { success :map1_1 }
+    world[:endcledit].build_scene &lambda{|s| }
     world
   end
 
@@ -67,7 +69,6 @@ module Nario
       scene.render(screen)
       scene = world[s_next].rebuild if s_next
       timer.wait_frame {
-        gc_start(screen) if $GC_BURDEN_MODE
         screen.update_rect(0, 0, Scene::SCREEN_WIDTH, Scene::SCREEN_HIGHT)
       }
     }

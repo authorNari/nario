@@ -10,8 +10,8 @@ module Nario
         collision_event
         flow_right
         garbage_sweep if(@player.frame % 100).zero?
-        return @miss if @player.goal?
-        return @success if @player.y > SCREEN_HIGHT*2
+        return @success if @player.goal?
+        return @miss if @player.y > SCREEN_HIGHT*2
         nil
       end
 
@@ -105,7 +105,7 @@ module Nario
           screen.update_rect(0, 0, SCREEN_WIDTH, SCREEN_HIGHT)
           GC.start
           t = Time.now - t
-          @player.damage(t)
+          @player.damage(t*80)
         end
       end
     end
