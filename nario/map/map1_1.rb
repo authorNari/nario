@@ -55,10 +55,10 @@ module Nario
       block Material::Pipe.new(8700, 505)
 
 
-      floor Material::Floor.new_fill_image(0, 600, 3270, 100, SDL::Surface.load("nario/image/floor_block.bmp"))
-      floor Material::Floor.new_fill_image(3420, 600, 700, 100, SDL::Surface.load("nario/image/floor_block.bmp"))
-      floor Material::Floor.new_fill_image(4300, 600, 3000, 100, SDL::Surface.load("nario/image/floor_block.bmp"))
-      floor Material::Floor.new_fill_image(7450, 600, 3000, 100, SDL::Surface.load("nario/image/floor_block.bmp"))
+      floor Material::Floor.new_fill_image(0, 600, 3270, 100, Material::Floor.floor_block_image)
+      floor Material::Floor.new_fill_image(3420, 600, 700, 100, Material::Floor.floor_block_image)
+      floor Material::Floor.new_fill_image(4300, 600, 3000, 100, Material::Floor.floor_block_image)
+      floor Material::Floor.new_fill_image(7450, 600, 3000, 100, Material::Floor.floor_block_image)
 
 
       left_triangle_block Material::StrongBlock, 6350, 4

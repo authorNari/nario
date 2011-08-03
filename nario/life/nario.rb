@@ -35,7 +35,7 @@ module Nario
         @font.draw_solid_utf8(screen, "HP", 2, 2, *Color::BLACK)
         max = Scene::SCREEN_WIDTH-50-10
         hp_width = (max.to_f * 0.01 * @hp).to_i
-        screen.fill_rect(50, 10, hp_width, 20, Color::BLUE)
+        screen.fill_rect(50, 10, hp_width, 20, Color::BLACK)
       end
 
       # collision event
