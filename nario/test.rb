@@ -11,11 +11,11 @@ class Input
   define_key SDL::Key::B, :b
 end
 
-module Nari
-  def self.test_screen(*proc)
-    SDL.init(SDL::INIT_VIDEO|SDL::INIT_JOYSTICK)
-    SDL::TTF.init
+SDL.init(SDL::INIT_VIDEO|SDL::INIT_JOYSTICK)
+SDL::TTF.init
 
+module Nario
+  def self.test_screen(*proc)
     if defined?(SDL::RELEASE_MODE)
       SDL::Mouse.hide
       screen = SDL.set_video_mode(Scene::SCREEN_WIDTH, Scene::SCREEN_HIGHT, 16, SDL::HWSURFACE|SDL::DOUBLEBUF|SDL::FULLSCREEN)
@@ -80,7 +80,7 @@ module Nari
   }
 
   chibi_nario_test = {}
-  chibi_nario_test[:map_1] = ::Scene::FlowWorld.new{ success :map_1 }
+  chibi_nario_test[:map_1] = Scene::FlowWorld.new{ success :map_1 }
   chibi_nario_test[:map_1].build_scene {|s|
     background Material::BackGround.new_color(0, 0, 10000, 800, [0x00, 0x99, 0xff])
     floor Material::Floor.new_fill_image(0, 600, 200, 300, SDL::Surface.load("nario/image/floor_block.bmp"))
@@ -105,7 +105,7 @@ module Nari
   }
 
   fear_nario_test = {}
-  fear_nario_test[:map_1] = ::Scene::FlowWorld.new{ success :map_1 }
+  fear_nario_test[:map_1] = Scene::FlowWorld.new{ success :map_1 }
   fear_nario_test[:map_1].build_scene {|s|
     background Material::BackGround.new_color(0, 0, 6000, 800, [0x00, 0x99, 0xff])
     floor Material::Floor.new_fill_image(0, 600, 800, 300, SDL::Surface.load("nario/image/floor_block.bmp"))
@@ -127,7 +127,7 @@ module Nari
   }
 
   block_test = {}
-  block_test[:map_1] = ::Scene::FlowWorld.new{ success :map_1 }
+  block_test[:map_1] = Scene::FlowWorld.new{ success :map_1 }
   block_test[:map_1].build_scene {|s|
     background Material::BackGround.new_color(0, 0, 6000, 800, [0x00, 0x99, 0xff])
     block Material::Pipe.new(500, 480)
@@ -150,7 +150,7 @@ module Nari
   }
 
   goal_test = {}
-  goal_test[:map_1] = ::Scene::FlowWorld.new{ success :map_1 }
+  goal_test[:map_1] = Scene::FlowWorld.new{ success :map_1 }
   goal_test[:map_1].build_scene {|s|
     floor Material::Floor.new_fill_image(0, 630, 5000, 300, SDL::Surface.load("nario/image/floor_block.bmp"))
     goal 800
@@ -162,7 +162,7 @@ module Nari
     goal_test[:map_1].render(screen)
   }
 
-  goal_test[:map_1] = ::Scene::FlowWorld.new{ success :map_1 }
+  goal_test[:map_1] = Scene::FlowWorld.new{ success :map_1 }
   goal_test[:map_1].build_scene {|s|
     background Material::BackGround.new_color(0, 0, 6000, 800, [0x00, 0x99, 0xff])
     floor Material::Floor.new_fill_image(0, 630, 5000, 300, SDL::Surface.load("nario/image/floor_block.bmp"))
