@@ -50,11 +50,11 @@ class Input
   end
 
   def initialize
-    #ƒWƒ‡ƒCƒXƒeƒBƒbƒN‚Ì‰Šú‰»
+    #$B%8%g%$%9%F%#%C%/$N=i4|2=(B
     if SDL::Joystick.num > 0
       @joystick = SDL::Joystick.open(0)
     else
-      @joystick = Object.new    #ƒ_ƒ~[‚ÌƒWƒ‡ƒCƒXƒeƒBƒbƒN‚ğ‚Â‚­‚é
+      @joystick = Object.new    #$B%@%_!<$N%8%g%$%9%F%#%C%/$r$D$/$k(B
       def @joystick.axis(i)   ; 0     ; end
       def @joystick.hat(i)    ; nil   ; end
       def @joystick.button(i) ; false ; end
