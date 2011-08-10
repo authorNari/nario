@@ -32,10 +32,10 @@ module Nario
 
       def put_screen(screen)
         super
-        @font.draw_solid_utf8(screen, "Time", 2, 2, *Color::BLACK)
-        max = Scene::SCREEN_WIDTH-80-10
+        @font.draw_solid_utf8(screen, "HP", 2, 2, *Color::BLACK)
+        max = Scene::SCREEN_WIDTH-50-10
         hp_width = (max.to_f * 0.01 * @hp).to_i
-        screen.fill_rect(80, 10, hp_width, 20, Color::BLACK)
+        screen.fill_rect(50, 10, hp_width, 20, Color::BLACK)
       end
 
       # collision event
